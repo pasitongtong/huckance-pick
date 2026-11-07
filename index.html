@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>휴캉스픽 — 영상 속 숙소 예약 링크</title>
+<meta name="description" content="숙박비 말고 실제로 내는 돈까지, 휴캉스 숙소 골라 드려요. 영상 속 숙소 예약 링크 모음.">
+<link rel="icon" href="favicon.png">
+<style>
+  :root { --navy:#0a2040; --teal:#06607f; --yel:#ffd600; --ink:#111; --card:#ffffff; --muted:#5b6475; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+         background:linear-gradient(180deg,var(--navy),var(--teal)); color:var(--ink); min-height:100vh; }
+  .wrap { max-width:480px; margin:0 auto; padding:28px 16px 48px; }
+  header { text-align:center; color:#fff; }
+  header img { width:96px; height:96px; border-radius:50%; border:3px solid var(--yel); }
+  h1 { margin:10px 0 4px; font-size:28px; letter-spacing:-0.5px; }
+  .tag { display:inline-block; background:var(--yel); color:#000; font-weight:800; padding:6px 12px; border-radius:8px; font-size:15px; }
+  .ad { margin:16px 0 8px; background:rgba(0,0,0,.35); color:#fff; font-size:13px; line-height:1.5; padding:10px 12px; border-radius:10px; }
+  .ad b { color:var(--yel); }
+  .ep { background:rgba(255,255,255,.08); border-radius:16px; padding:14px 12px 6px; margin-top:20px; }
+  .ep h2 { color:#fff; font-size:18px; margin:0 0 4px; }
+  .ep .basis { color:#cfe3ee; font-size:12.5px; margin:0 0 12px; }
+  a.card { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); background:var(--card);
+           border-radius:14px; padding:12px 14px; margin-bottom:10px; box-shadow:0 2px 8px rgba(0,0,0,.18); }
+  a.card:active { transform:scale(.98); }
+  .num { flex:0 0 32px; height:32px; border-radius:50%; background:var(--yel); font-weight:900; display:flex; align-items:center; justify-content:center; }
+  .info { flex:1; min-width:0; }
+  .name { font-weight:800; font-size:16px; }
+  .why { color:var(--muted); font-size:13px; margin-top:2px; }
+  .price { text-align:right; font-weight:900; font-size:17px; color:#c2410c; white-space:nowrap; }
+  .price small { display:block; font-size:11px; font-weight:600; color:var(--muted); }
+  .go { font-size:12px; color:#fff; background:#ef4444; border-radius:6px; padding:2px 6px; margin-top:4px; display:inline-block; }
+  footer { color:#cfe3ee; font-size:12px; line-height:1.6; margin-top:24px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="휴캉스픽 로고">
+    <h1>휴캉스픽</h1>
+    <span class="tag">숙박비 말고, 실제로 내는 돈까지</span>
+  </header>
+  <div class="ad"><b>[광고]</b> 이 페이지의 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
+  <main id="list"></main>
+  <footer>
+    가격은 영상마다 적힌 조회일·숙박일 기준이며 날짜·요일·객실·회원 할인에 따라 달라집니다.<br>
+    예약 전 쿠팡에서 그날 가격과 필수 현장 요금(온수비 등)을 꼭 다시 확인하세요.<br>
+    © 휴캉스픽 · YouTube @휴캉스픽
+  </footer>
+</div>
+<script>
+// 새 편은 맨 위에 추가 (최신 편이 먼저 보이게)
+const EPISODES = [
+  { title: "2편 · 가평 5만 원대 풀빌라, 진짜 가격", basis: "수영장 객실 + 필수 온수비 · 11/16(월) 1박 일반가 · 11/7 조회",
+    items: [
+      { name: "아베크제이 풀빌라", why: "둘이 쉬러 간다면", price: "11.56만", url: "https://link.coupang.com/a/itGnnxB5yu" },
+      { name: "프랜치캣 풀빌라", why: "작은 강아지랑 간다면", price: "11.9만", url: "https://link.coupang.com/a/itGoXB9SHQ" },
+      { name: "똥강아지 키즈 풀빌라", why: "아이랑 간다면", price: "12.4만", url: "https://link.coupang.com/a/itGpcGKCaW" },
+    ] },
+  { title: "1편 · 가평 온수 풀빌라, 실제로 내는 돈", basis: "숙박비 + 필수 온수비 · 11/9(월) 1박 일반가 · 11/7 조회",
+    items: [
+      { name: "호명나루165", why: "가격이 먼저라면", price: "15.9만", url: "https://link.coupang.com/a/irbzdSg6i4" },
+      { name: "오세르키즈&패밀리", why: "아이랑 간다면", price: "17만", url: "https://link.coupang.com/a/irbAm2Jq9Y" },
+      { name: "가평 릴리브풀빌라", why: "객실 수영장이 먼저라면", price: "18.9만", url: "https://link.coupang.com/a/irbCoX8xWu" },
+    ] },
+];
+const list = document.getElementById("list");
+for (const ep of EPISODES) {
+  const sec = document.createElement("section"); sec.className = "ep";
+  sec.innerHTML = `<h2>${ep.title}</h2><p class="basis">${ep.basis}</p>`;
+  ep.items.forEach((it, i) => {
+    const a = document.createElement("a");
+    a.className = "card"; a.href = it.url; a.target = "_blank"; a.rel = "sponsored noopener";
+    a.innerHTML = `<div class="num">${i + 1}</div><div class="info"><div class="name">${it.name}</div><div class="why">${it.why}</div></div>
+      <div class="price">${it.price}<small>실제 가격</small><span class="go">쿠팡에서 보기</span></div>`;
+    sec.appendChild(a);
+  });
+  list.appendChild(sec);
+}
+</script>
+</body>
+</html>
