@@ -31,6 +31,7 @@
   .price { text-align:right; font-weight:900; font-size:17px; color:#c2410c; white-space:nowrap; }
   .price small { display:block; font-size:11px; font-weight:600; color:var(--muted); }
   .go { font-size:12px; color:#fff; background:#ef4444; border-radius:6px; padding:2px 6px; margin-top:4px; display:inline-block; }
+  .dog { display:inline-block; font-size:11px; font-weight:800; color:#065f46; background:#d1fae5; border-radius:6px; padding:1px 6px; vertical-align:2px; }
   footer { color:#cfe3ee; font-size:12px; line-height:1.6; margin-top:24px; text-align:center; }
 </style>
 </head>
@@ -52,10 +53,16 @@
 <script>
 // 새 편은 맨 위에 추가 (최신 편이 먼저 보이게)
 const EPISODES = [
+  { title: "3편 · 가평 풀빌라, 커플 vs 4인 가족", basis: "어른 2 + 7살 이하 아이 2 · 11/16(월) 1박 일반가 · 11/7 조회",
+    items: [
+      { name: "라온제나 풀빌라", why: "새 객실이 먼저라면 · 커플 14.9만", price: "가족 18.9만", url: "https://link.coupang.com/a/itOSSx0moC" },
+      { name: "감성216 스파 풀빌라", why: "스파 즐기는 연인이라면 · 커플 18.68만", price: "가족 22.68만", url: "https://link.coupang.com/a/itOS7xsboy" },
+      { name: "더클리프 풀빌라", why: "가족·친구 여럿이라면 · 6인 기준", price: "가족 13.9만", url: "https://link.coupang.com/a/itOTmnp7XE" },
+    ] },
   { title: "2편 · 가평 5만 원대 풀빌라, 진짜 가격", basis: "수영장 객실 + 필수 온수비 · 11/16(월) 1박 일반가 · 11/7 조회",
     items: [
       { name: "아베크제이 풀빌라", why: "둘이 쉬러 간다면", price: "11.56만", url: "https://link.coupang.com/a/itGnnxB5yu" },
-      { name: "프랜치캣 풀빌라", why: "작은 강아지랑 간다면", price: "11.9만", url: "https://link.coupang.com/a/itGoXB9SHQ" },
+      { name: "프랜치캣 풀빌라", why: "작은 강아지랑 간다면", price: "11.9만", url: "https://link.coupang.com/a/itGoXB9SHQ", dog: true },
       { name: "똥강아지 키즈 풀빌라", why: "아이랑 간다면", price: "12.4만", url: "https://link.coupang.com/a/itGpcGKCaW" },
     ] },
   { title: "1편 · 가평 온수 풀빌라, 실제로 내는 돈", basis: "숙박비 + 필수 온수비 · 11/9(월) 1박 일반가 · 11/7 조회",
@@ -72,7 +79,7 @@ for (const ep of EPISODES) {
   ep.items.forEach((it, i) => {
     const a = document.createElement("a");
     a.className = "card"; a.href = it.url; a.target = "_blank"; a.rel = "sponsored noopener";
-    a.innerHTML = `<div class="num">${i + 1}</div><div class="info"><div class="name">${it.name}</div><div class="why">${it.why}</div></div>
+    a.innerHTML = `<div class="num">${i + 1}</div><div class="info"><div class="name">${it.name}${it.dog ? ' <span class="dog">애견동반 가능</span>' : ''}</div><div class="why">${it.why}</div></div>
       <div class="price">${it.price}<small>실제 가격</small><span class="go">쿠팡에서 보기</span></div>`;
     sec.appendChild(a);
   });
