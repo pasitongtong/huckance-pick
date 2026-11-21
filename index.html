@@ -60,6 +60,18 @@
 <script>
 // 새 편은 맨 위에 추가 (최신 편이 먼저 보이게)
 const EPISODES = [
+  { title: "롱폼 · 연말 호캉스 호텔 9곳, 서울·부산·제주 실제 가격 10만 원부터", basis: "호텔 · 어른 2 · 조식·주차 조건까지 따진 실제 가격 · 12/31(목) 1박 일반가 · 11/21 조회 · 실제 가격 순",
+    items: [
+      { name: "제주 함덕 오션그랜드호텔 디럭스 트윈룸 바다전망", why: "연인끼리 · 함덕해수욕장 바로 앞 · 최대 3인 · 2인 조식 포함 시 12만", price: "10만", url: "https://link.coupang.com/a/iOzdUmT8zQ", img: "img/ny_jj_og.jpg" },
+      { name: "제주 성산 코델리아S호텔 디럭스 트윈 (2인 조식 포함)", why: "아이랑 · 주차 무료 · 48개월 미만 무료 · 성산일출봉 차로 약 6분", price: "14.4만", url: "https://link.coupang.com/a/iOzewyo4QK", img: "img/ny_jj_cd.jpg" },
+      { name: "제주 섭지코지 오션스타 호텔 앤 리조트 Ocean Sky A 133㎡", why: "여럿이 · 기준 4인·최대 6인 · 넓은 거실·취사 · 섭지코지 차로 약 3분", price: "15.49만", url: "https://link.coupang.com/a/iOze9upHOK", img: "img/ny_jj_os.jpg" },
+      { name: "서울 신사동 더 리버사이드 호텔 디럭스 더블 한강뷰", why: "연인끼리 · 한강뷰 · 주차 무료 · 실내 수영장 1인 1.1만 선택", price: "28만", url: "https://link.coupang.com/a/iLgzWSirqC", img: "img/xh_riv.jpg" },
+      { name: "서울 잠실 로사나 호텔 디럭스 더블 (2인 조식 포함)", why: "연인끼리 · 롯데월드타워·석촌호수 바로 앞 · 주차 무료", price: "36.5만", url: "https://link.coupang.com/a/iLgAy936sK", img: "img/xh_ros.jpg" },
+      { name: "부산 광안리 마린뷰호텔 프리미엄 더블 (하프오션뷰)", why: "연인끼리 · 광안리해수욕장 바로 앞 · 주차 무료 · 최대 3인", price: "43.25만", url: "https://link.coupang.com/a/iMUvpafdxQ", img: "img/ny_bs_mar.jpg" },
+      { name: "부산 호텔라온 송정 패밀리 트윈룸 바다전망 (3인 조식 포함)", why: "아이랑 · 3인 조식 포함 · 송정해수욕장 바로 앞 · 주차 무료", price: "46만", url: "https://link.coupang.com/a/iMUv07FsYK", img: "img/ny_bs_raon.jpg" },
+      { name: "서울 광화문 서머셋팰리스 서울 (Renewed) 디럭스 트윈 3인 조식", why: "아이랑 · 인원 추가 0원 · 부엌·세탁기 · 광화문광장 도보 약 7분", price: "47.3만", url: "https://link.coupang.com/a/iLgBbrCFxI", img: "img/xh_som.jpg" },
+      { name: "부산 해운대 썬클라우드 호텔 패밀리 트윈 오션 뷰", why: "여럿이 · 4인까지 인원 추가 0원 · 객실 주방 · 주차 무료", price: "51만", url: "https://link.coupang.com/a/iMUwC2dC68", img: "img/ny_bs_sun.jpg" },
+    ] },
   { title: "16편 · 새해 해돋이 제주 호캉스, 바다 전망 10만 원부터", basis: "호텔 · 조식·인원 추가까지 따진 실제 가격 · 12/31(목) 1박 일반가 · 11/20 조회",
     items: [
       { name: "함덕 오션그랜드호텔 디럭스 트윈룸 바다전망", why: "연인끼리 · 함덕해수욕장 바로 앞 · 서우봉과 바다 보이는 객실 · 최대 3인", price: "10만", url: "https://link.coupang.com/a/iOzdUmT8zQ", img: "img/ny_jj_og.jpg" },
